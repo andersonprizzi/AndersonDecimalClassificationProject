@@ -1,32 +1,39 @@
-%%{init: {'flowchart': {'rankSpacing': 150, 'nodeSpacing': 20}}}%%
+---
+config:
+  layout: grid
+  flowchart:
+    nodeSpacing: 100
+---
 graph TD
-    CF(Ciências formais)
+	%% Nodes
+	ScientificKnowledge("Conhecimento Científico")
 
-    CF --> CF_MAT(Matemática)
-    CF --> CF_EST(Estatística)
-    CF --> CF_CIC(Ciência da Computação)
-    CF --> CF_LOG(Lógica)
-    CF --> CF_LIN(Linguística)
+    FormalSciences("Ciências Formais")
+	NaturalSciences("Ciências Naturais")
+	SocialSciences("Ciências Sociais")
 
-    CF_CIC --> CF_CIC_COMPCLASSICA(Computação clássica)
-	    CF_CIC_COMPCLASSICA --> CF_CIC_COMPCLASSICA_ALGORITMOS(Algoritmos)
-	    CF_CIC_COMPCLASSICA --> CF_CIC_COMPCLASSICA_ESTRUTURADADOS(Estrutura de dados)
-	    CF_CIC_COMPCLASSICA --> CF_CIC_COMPCLASSICA_REDES(Redes de computadores)
-		    CF_CIC_COMPCLASSICA_REDES --> CF_CIC_COMPCLASSICA_REDES_ARQ(Arquitetura de redes de computadores)
-			    CF_CIC_COMPCLASSICA_REDES_ARQ --> CF_CIC_COMPCLASSICA_REDES_ARQ_CAMADAFISICA(Camada física)
-			    CF_CIC_COMPCLASSICA_REDES_ARQ --> CF_CIC_COMPCLASSICA_REDES_ARQ_CAMADAENLACE(Camada de enlace)
-			    CF_CIC_COMPCLASSICA_REDES_ARQ --> CF_CIC_COMPCLASSICA_REDES_ARQ_CAMADAREDE(Camada de rede)
-			    CF_CIC_COMPCLASSICA_REDES_ARQ --> CF_CIC_COMPCLASSICA_REDES_ARQ_CAMADATRANSPORTE(Camada de transporte)
-			    CF_CIC_COMPCLASSICA_REDES_ARQ --> CF_CIC_COMPCLASSICA_REDES_ARQ_CAMADAAPLICACAO(Camada de aplicação)
-	    CF_CIC_COMPCLASSICA --> CF_CIC_COMPCLASSICA_TEORIACOMP(Teoria da computação)
-		    CF_CIC_COMPCLASSICA_TEORIACOMP --> CF_CIC_COMPCLASSICA_TEORIACOMP_AUTOMAT(Teoria dos autômatos e linguagens formais)
-		    CF_CIC_COMPCLASSICA_TEORIACOMP --> CF_CIC_COMPCLASSICA_TEORIACOMP_COMPTBL(Teoria da computabilidade)
-		    CF_CIC_COMPCLASSICA_TEORIACOMP --> CF_CIC_COMPCLASSICA_TEORIACOMP_COMPLEX(Teoria da complexidade computacional)
-	    CF_CIC_COMPCLASSICA --> CF_CIC_COMPCONPARDIS(Computação concorrente, paralela e distribuída)
-    
-    CF_CIC --> CF_CIC_COMPQUANTICA(Computação quântica)
-	    CF_CIC_COMPQUANTICA --> CF_CIC_COMPQUANTICA_ALGORITMOS(Algoritmos)
+	Logic("Lógica")
+	Mathematics("Matemática")
+	ComputerScience("Ciência da Computação")
 
-    CF_LOG --> CF_LOG_CLASSICA(Lógica clássica)
-    CF_LOG --> CF_LOG_NAOCLASSICA(Lógica não clássica)
-    CF_LOG --> CF_LOG_MATEMATICA(Lógica matemática)
+	TheoreticalComputerScience("Ciência da Computação<br>Teórica")
+	AppliedComputerScience("Ciência da Computação<br>Aplicada")
+
+	ComputerScience_TheoreticalComputerScience_InformationTheory("Teoria da Informação")
+	ComputerScience_TheoreticalComputerScience_ComputationTheory("Teoria da Computação")
+
+	%%////////////////////////////////////////////////////////////////////////////////%%
+
+	ScientificKnowledge --> FormalSciences
+	ScientificKnowledge --> NaturalSciences
+	ScientificKnowledge --> SocialSciences
+
+	FormalSciences --> Logic
+	FormalSciences --> Mathematics
+	FormalSciences --> ComputerScience
+
+	ComputerScience --> TheoreticalComputerScience
+	ComputerScience --> AppliedComputerScience
+
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_InformationTheory
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_ComputationTheory
