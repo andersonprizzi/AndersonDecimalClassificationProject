@@ -1,28 +1,53 @@
 ---
 config:
-  layout: grid
+  layout: default
   flowchart:
-    nodeSpacing: 100
+    nodeSpacing: 75
+    rankSpacing: 200
+    curve: basis
 ---
 graph TD
 	%% Nodes
-	ScientificKnowledge("Conhecimento Científico")
+	ScientificKnowledge("Scientific Knowledge")
 
-    FormalSciences("Ciências Formais")
-	NaturalSciences("Ciências Naturais")
-	SocialSciences("Ciências Sociais")
-
-	Logic("Lógica")
-	Mathematics("Matemática")
-	ComputerScience("Ciência da Computação")
-
-	TheoreticalComputerScience("Ciência da Computação<br>Teórica")
-	AppliedComputerScience("Ciência da Computação<br>Aplicada")
-
-	ComputerScience_TheoreticalComputerScience_InformationTheory("Teoria da Informação")
-	ComputerScience_TheoreticalComputerScience_ComputationTheory("Teoria da Computação")
+    FormalSciences("Formal Sciences")
+	NaturalSciences("Natural Sciences")
+	SocialSciences("Social Sciences")
 
 	%%////////////////////////////////////////////////////////////////////////////////%%
+
+	Logic("Logic")
+	Mathematics("Mathematics")
+	ComputerScience("Computer Science")
+
+	%%////////////////////////////////////////////////////////////////////////////////%%
+
+	TheoreticalComputerScience("Theoretical Computer Science")
+	AppliedComputerScience("Applied Computer Science")
+
+	%%////////////////////////////////////////////////////////////////////////////////%%
+
+	ComputerScience_TheoreticalComputerScience_TheoryInformation("Theory of Information")
+
+	ComputerScience_TheoreticalComputerScience_TheoryComputation("Theory of Computation")
+		ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryFormalLanguages("Theory of Formal Languages")
+		ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryAutomata("Theory of Automata")
+		ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryComputability("Theory of Computability")
+		ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryComputationalComplexity("Theory of Computational Complexity")
+
+	ComputerScience_TheoreticalComputerScience_TheoryFormalMethods("Theory of Formal Methods")
+
+	ComputerScience_TheoreticalComputerScience_TheoryProgramming("Theory of Programming")
+
+	ComputerScience_TheoreticalComputerScience_DataStructure("Data Structure")
+
+	ComputerScience_TheoreticalComputerScience_Algorithms("Algorithms")
+	
+
+
+	%%////////////////////////////////////////////////////////////////////////////////%%
+
+
 
 	ScientificKnowledge --> FormalSciences
 	ScientificKnowledge --> NaturalSciences
@@ -35,5 +60,15 @@ graph TD
 	ComputerScience --> TheoreticalComputerScience
 	ComputerScience --> AppliedComputerScience
 
-	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_InformationTheory
-	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_ComputationTheory
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_TheoryInformation
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_TheoryComputation
+
+		ComputerScience_TheoreticalComputerScience_TheoryComputation --> ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryFormalLanguages
+		ComputerScience_TheoreticalComputerScience_TheoryComputation --> ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryAutomata
+		ComputerScience_TheoreticalComputerScience_TheoryComputation --> ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryComputability
+		ComputerScience_TheoreticalComputerScience_TheoryComputation --> ComputerScience_TheoreticalComputerScience_TheoryComputation_TheoryComputationalComplexity
+	
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_TheoryProgramming
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_TheoryFormalMethods
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_DataStructure
+	TheoreticalComputerScience --> ComputerScience_TheoreticalComputerScience_Algorithms

@@ -1,6 +1,6 @@
 # Anderson Decimal Classification
 
-This repository contains a diagram created with Mermaid that visually represents the relationships between different knowledge domains. It also includes a list in which each domain is numbered according to a decimal classification system, making it easier to organize and navigate between topics.
+This repository contains a diagram created with Mermaid that visually represents the relationships between different knowledge domains. It also includes a list in which each domain is numbered according to a decimal classification system, called Anderson Decimal Classification (ADC), making it easier to organize and navigate between topics.
 
 ## Overview
 
