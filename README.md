@@ -1,6 +1,6 @@
-# Knowledge Domains Diagram
+# Anderson Decimal Classification
 
-This repository contains Mermaid diagram files that visually represent the relationships between various knowledge domains.
+This repository contains a diagram created with Mermaid that visually represents the relationships between different knowledge domains. It also includes a list in which each domain is numbered according to a decimal classification system, making it easier to organize and navigate between topics.
 
 ## Overview
 
@@ -9,14 +9,8 @@ The goal of this project is to provide a clear and structured graphical represen
 ## Contents
 
 - `KnowledgeDiagram.mmd`: Main Mermaid file with the knowledge domains diagram.
+- `LICENSE.md`: License to use.
 - `README.md`: This file.
-
-## Requirements
-
-To view or edit the diagram, you can use:
-
-- [Mermaid Live Editor](https://mermaid.live/)
-- VS Code with the [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview)
 
 ## Usage
 
